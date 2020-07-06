@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package yiplee.twirp.gateway.service;
+option go_package = "proto";
+
+message Book {
+    string id = 1;
+    string name = 2;
+    string cover = 3;
+}
+
+message BookServiceReq {
+    message Create {
+        string name =1;
+        string cover = 2;
+    }
+
+    message Find {
+        string id = 1;
+    }
+}
+
+service BookService {
+    rpc Create(BookServiceReq.Create) returns (Book);
+    rpc Find(BookServiceReq.Find) returns (Book);
+}
