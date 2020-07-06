@@ -33,8 +33,10 @@ import url "net/url"
 // =====================
 
 type BookService interface {
+	// Create a new book
 	Create(context.Context, *BookServiceReq_Create) (*Book, error)
 
+	// Find a book by book id
 	Find(context.Context, *BookServiceReq_Find) (*Book, error)
 }
 

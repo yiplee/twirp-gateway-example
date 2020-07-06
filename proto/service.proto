@@ -21,6 +21,8 @@ message BookServiceReq {
 }
 
 service BookService {
+    // Create a new book
     rpc Create(BookServiceReq.Create) returns (Book);
+    // Find a book by book id
     rpc Find(BookServiceReq.Find) returns (Book);
 }
